@@ -18,3 +18,24 @@ if ("") {
 } else {
     console.log('Congrats! Succeed!');
 }
+
+var str1 = "56";
+var str2 = "323";
+
+console.log(str1.charCodeAt(0));
+console.log(str2.charCodeAt(0));
+
+console.log(null == 0);
+
+var test = {};
+var prop = "set";
+test["get"] = "getget";
+test["set"] = "setset";
+console.log(test[prop]);
+
+delete test[prop];
+
+console.log(test);
+console.log("set" in test);
+console.log("get" in test);
+

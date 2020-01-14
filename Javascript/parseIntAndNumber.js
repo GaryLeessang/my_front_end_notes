@@ -39,3 +39,25 @@ console.log(test);
 console.log("set" in test);
 console.log("get" in test);
 
+//立即执行函数
+(function(a, b) {
+    console.log("a = " + a);
+    console.log("b = " + b);
+})(123, 456);
+
+var a = 'aaa';
+for (var i = 0; i < 3; i++) {
+    var hahahaha = 1;
+}
+
+console.log(hahahaha);
+
+var test222 = 2;
+
+function foo() {
+    console.log(test222);
+    var test222 = 2;     // 此处的a相当于window.test222
+}
+
+foo();
+console.log(test222);   //打印结果是2

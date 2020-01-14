@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        //change the row color when mouseenter, and recover it when mouseleave
+        $(function() {
+            var evenRow = $("li:even");
+            var oddRow = $("li:odd");
+            evenRow.css("background", "red");
+            oddRow.css("background", "yellow");
+            
+            var color = "";
+            $("li").mouseenter(function () { 
+                color = $(this).css("background");
+                $(this).css("background", "black");
+             });
+
+            $("li").mouseleave(function() {
+                $(this).css("background", color);
+             });
+            
+        });
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>这是一个测试</li>
+        <li>这是一个测试</li>
+        <li>这是一个测试</li>
+        <li>这是一个测试</li>
+        <li>这是一个测试</li>
+        <li>这是一个测试</li>
+    </ul>
+</body>
+
+</html>

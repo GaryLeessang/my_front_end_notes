@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app1">
+        <div v-if="Math.random() > 0.5">You can see my comment</div>
+        <div v-else>Sorry</div>
+    </div>
+
+    <div id="app2">
+        <template v-if="loginType === 'username'">
+            <label>
+                UserName
+            </label>
+            <input placeholder="Enter your username" key='username-input'>
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address" key='email-input'>
+        </template>
+    </div>
+
+    <div id="app3">
+        <ul v-for="(item, index) in testArr" :key="item.id">
+            <li>
+                {{index + ' ' + item }}
+            </li>
+        </ul>
+    </div>
+
+    <ul id="v-for-object">
+        <li v-for="(value,name,index) in object">
+            {{index}} : {{name}} : {{value}}
+        </li>
+    </ul>
+
+
+
+    <script>
+        var vm = new Vue({
+            el: '#app1'
+        })
+
+        var vm2 = new Vue({
+            el: '#app2',
+            data: {
+                loginType: 'username'
+            }
+        })
+
+        var vm3 = new Vue({
+            el: '#app3',
+            data: {
+                testArr: ['a', 'b', 'c', 'd']
+            }
+        })
+
+        var vm4 = new Vue({
+            el: '#v-for-object',
+            data: {
+                object: {
+                    title: 'Gary',
+                    content: 'This is a test',
+                    PublishedAt: '2020-02-23'
+                }
+            }   
+        })
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
